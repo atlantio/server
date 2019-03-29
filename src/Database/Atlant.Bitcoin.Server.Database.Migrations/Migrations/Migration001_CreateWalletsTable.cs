@@ -9,7 +9,8 @@ namespace Atlant.Bitcoin.Server.Database.Migrations.Migrations
         {
             Create.Table("Wallets")
                 .WithColumn("Id").AsGuid().PrimaryKey()
-                .WithColumn("Name").AsString().NotNullable().Unique();
+                .WithColumn("Name").AsString().NotNullable().Unique()
+                .WithColumn("Balance").AsDouble().NotNullable();
         }
     }
 }

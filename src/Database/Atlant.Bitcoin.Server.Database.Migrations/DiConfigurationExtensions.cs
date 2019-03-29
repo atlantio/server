@@ -1,4 +1,5 @@
-﻿using FluentMigrator.Runner;
+﻿using Atlant.Bitcoin.Server.Settings.Abstractions;
+using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Atlant.Bitcoin.Server.Database.Migrations
@@ -7,14 +8,17 @@ namespace Atlant.Bitcoin.Server.Database.Migrations
     {
         public static IServiceCollection AddMigrationsServices(this IServiceCollection services)
         {
+            services.AddSingleton<IConnectionStrings, ConnectionStrings>();
+
+            var connectionStrings = services.BuildServiceProvider().GetRequiredService<IConnectionStrings>();
+
             services
                 .AddFluentMigratorCore()
                 .ConfigureRunner(builder =>
                 {
                     builder
                         .AddSqlServer()
-                        // TODO: remove hardcode
-                        .WithGlobalConnectionString("Server=localhost;Database=Atlant;User Id=sa;Password = 12345;")
+                        .WithGlobalConnectionString(connectionStrings.ConnectionString)
                         .ScanIn(typeof(Program).Assembly).For.Migrations();
                 });
 

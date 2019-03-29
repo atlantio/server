@@ -1,5 +1,6 @@
 ﻿using System;
 using FluentMigrator.Runner;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -27,6 +28,7 @@ namespace Atlant.Bitcoin.Server.Database.Migrations
 
         private static IHost CreateHost() =>
             new HostBuilder()
+                .ConfigureHostConfiguration(builder => builder.AddJsonFile("appsettings.json"))
                 .ConfigureServices(collection => collection.AddMigrationsServices())
                 .Build();
     }
