@@ -8,10 +8,12 @@ namespace Atlant.Bitcoin.Server.Host
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvcCore();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseMvc();
         }
     }
 }
