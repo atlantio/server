@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.Contracts", "Atlant.Bitcoin.Server.Contracts\Atlant.Bitcoin.Server.Contracts.csproj", "{E777BEA6-AF1F-4E09-B455-3DFE36B61B1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.Domain", "Atlant.Bitcoin.Server.Domain\Atlant.Bitcoin.Server.Domain.csproj", "{33475AA8-F005-4F82-BAF7-A39A7285A2C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E777BEA6-AF1F-4E09-B455-3DFE36B61B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E777BEA6-AF1F-4E09-B455-3DFE36B61B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E777BEA6-AF1F-4E09-B455-3DFE36B61B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33475AA8-F005-4F82-BAF7-A39A7285A2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33475AA8-F005-4F82-BAF7-A39A7285A2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33475AA8-F005-4F82-BAF7-A39A7285A2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33475AA8-F005-4F82-BAF7-A39A7285A2C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
