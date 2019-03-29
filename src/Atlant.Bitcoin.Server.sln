@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.Repos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.DataAccess.Sql", "Atlant.Bitcoin.Server.DataAccess.Sql\Atlant.Bitcoin.Server.DataAccess.Sql.csproj", "{ED8FC4DB-8C55-4B54-BCDD-F8D1151CE0FD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{863B017A-55CD-462A-8A80-366A8D33F7CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atlant.Bitcoin.Server.Database.Migrations", "Database\Atlant.Bitcoin.Server.Database.Migrations\Atlant.Bitcoin.Server.Database.Migrations.csproj", "{910C44BF-ACD5-4E22-87C3-87D705325ED0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +49,16 @@ Global
 		{ED8FC4DB-8C55-4B54-BCDD-F8D1151CE0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8FC4DB-8C55-4B54-BCDD-F8D1151CE0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8FC4DB-8C55-4B54-BCDD-F8D1151CE0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910C44BF-ACD5-4E22-87C3-87D705325ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910C44BF-ACD5-4E22-87C3-87D705325ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910C44BF-ACD5-4E22-87C3-87D705325ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910C44BF-ACD5-4E22-87C3-87D705325ED0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{910C44BF-ACD5-4E22-87C3-87D705325ED0} = {863B017A-55CD-462A-8A80-366A8D33F7CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EBDD2F1D-5957-4F10-8EA0-00AF5D71AF8D}
