@@ -1,4 +1,5 @@
-﻿using Atlant.Bitcoin.Server.DataAccess.Sql;
+﻿using Atlant.Bitcoin.Server.Application;
+using Atlant.Bitcoin.Server.DataAccess.Sql;
 using Atlant.Bitcoin.Server.Settings.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +18,8 @@ namespace Atlant.Bitcoin.Server.Host
 
             services
                 .AddDataAccessServices(connectionStrings)
-                .AddSqlRepositories();
+                .AddSqlRepositories()
+                .AddApplicationServices();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
