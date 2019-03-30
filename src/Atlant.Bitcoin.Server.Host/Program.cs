@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace Atlant.Bitcoin.Server.Host
 {
@@ -22,6 +23,7 @@ namespace Atlant.Bitcoin.Server.Host
 
         public static IWebHost CreateWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(builder => builder.AddJsonFile("appsettings.json"))
                 .UseStartup<Startup>()
                 .Build();
     }
