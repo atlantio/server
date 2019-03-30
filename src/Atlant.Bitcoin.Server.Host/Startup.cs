@@ -14,7 +14,10 @@ namespace Atlant.Bitcoin.Server.Host
 
             services.AddConfiguration();
             var connectionStrings = services.BuildServiceProvider().GetRequiredService<IConnectionStrings>();
-            services.AddDataAccessServices(connectionStrings);
+
+            services
+                .AddDataAccessServices(connectionStrings)
+                .AddSqlRepositories();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

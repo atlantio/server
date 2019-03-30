@@ -1,4 +1,6 @@
 ﻿using System;
+using Atlant.Bitcoin.Server.DataAccess.Sql.Repositories;
+using Atlant.Bitcoin.Server.Repositories;
 using Atlant.Bitcoin.Server.Settings.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,13 @@ namespace Atlant.Bitcoin.Server.DataAccess.Sql
                 builder.UseSqlServer(connectionStrings.ConnectionString);
 
             });
+
+            return services;
+        }
+
+        public static IServiceCollection AddSqlRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IWalletsRepository, WalletsRepository>();
 
             return services;
         }
