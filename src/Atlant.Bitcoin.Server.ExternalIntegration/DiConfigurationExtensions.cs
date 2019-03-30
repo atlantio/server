@@ -11,6 +11,7 @@ namespace Atlant.Bitcoin.Server.ExternalIntegration
         {
             services.AddSingleton<HttpClient>();
             services.AddSingleton<IHttpClientWrapper, HttpClientWrapper>();
+            services.AddSingleton<IBitcoinServerRequestBuilder, BitcoinServerRequestBuilder>();
             services.AddScoped<IPaymentExternalService, PaymentExternalService>();
 
             return services;

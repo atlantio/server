@@ -24,7 +24,7 @@ namespace Atlant.Bitcoin.Server.Controllers.Controllers
             if (request == null)
                 return BadRequest();
 
-            await _paymentService.TransferToAddress(new BitcoinAddress(request.RecipientAddress), request.Amount);
+            await _paymentService.TransferToAddress(request.RecipientAddress, request.Amount);
 
             return Ok();
         }

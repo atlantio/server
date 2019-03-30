@@ -20,11 +20,11 @@ namespace Atlant.Bitcoin.Server.Application.Services
                 paymentExternalService ?? throw new ArgumentNullException(nameof(paymentExternalService));
         }
 
-        public async Task TransferToAddress(BitcoinAddress to, double amount)
+        public async Task TransferToAddress(string to, double amount)
         {
             var hotWallet = await _walletsService.GetHotWalletAsync();
 
-            await _paymentExternalService.SendToAddress(hotWallet.Name, to.Id, amount);
+            await _paymentExternalService.SendToAddress(hotWallet.Name, to, amount);
         }
     }
 }

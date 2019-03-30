@@ -8,27 +8,24 @@ namespace Atlant.Bitcoin.Server.ExternalIntegration.Services
 {
     internal class PaymentExternalService : IPaymentExternalService
     {
-        private readonly IBitcoinServerSettings _bitcoinServerSettings;
+        private readonly IBitcoinServerRequestBuilder _bitcoinServerRequestBuilder;
         private readonly IHttpClientWrapper _client;
 
         public PaymentExternalService(
-            IBitcoinServerSettings bitcoinServerSettings,
+            IBitcoinServerRequestBuilder bitcoinServerRequestBuilder,
             IHttpClientWrapper client)
         {
-            _bitcoinServerSettings =
-                bitcoinServerSettings ?? throw new ArgumentNullException(nameof(bitcoinServerSettings));
+            _bitcoinServerRequestBuilder =
+                bitcoinServerRequestBuilder ?? throw new ArgumentNullException(nameof(bitcoinServerRequestBuilder));
             _client = client ?? throw new ArgumentNullException(nameof(client));
         }
 
-        //TODO: tmp solution just for testing, refactor after successfull testing
+        //TODO: add response handling
         public async Task SendToAddress(string walletName, string toAddress, double amount)
         {
-            var request = new BitcoinServerRequestModel();
-            request.Method = "sendtoaddress";
-            request.Params.Add(toAddress);
-            request.Params.Add(Convert.ToString(amount));
+            var request = _bitcoinServerRequestBuilder.BuildSendToAddress(toAddress, amount);
 
-            var response = await _client.SendAsync($"wallet/{walletName}", request);
+            var response = await _client.SendAsync($"/wallet/{walletName}", request);
         }
     }
 }
