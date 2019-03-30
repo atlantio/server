@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Application\Atlant.Bitcoin.Server.Application.csproj" />
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Controllers\Atlant.Bitcoin.Server.Controllers.csproj" />
     <ProjectReference Include="..\Atlant.Bitcoin.Server.DataAccess.Sql\Atlant.Bitcoin.Server.DataAccess.Sql.csproj" />
+    <ProjectReference Include="..\Atlant.Bitcoin.Server.ExternalIntegration\Atlant.Bitcoin.Server.ExternalIntegration.csproj" />
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Settings\Atlant.Bitcoin.Server.Settings.csproj" />
   </ItemGroup>
 

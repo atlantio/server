@@ -1,5 +1,6 @@
 ﻿using Atlant.Bitcoin.Server.Application;
 using Atlant.Bitcoin.Server.DataAccess.Sql;
+using Atlant.Bitcoin.Server.ExternalIntegration;
 using Atlant.Bitcoin.Server.Settings.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,9 @@ namespace Atlant.Bitcoin.Server.Host
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore();
+            services
+                .AddMvcCore()
+                .AddJsonFormatters();
 
             services.AddConfiguration();
             var connectionStrings = services.BuildServiceProvider().GetRequiredService<IConnectionStrings>();
@@ -19,6 +22,7 @@ namespace Atlant.Bitcoin.Server.Host
             services
                 .AddDataAccessServices(connectionStrings)
                 .AddSqlRepositories()
+                .AddExtenralIntegrationServices()
                 .AddApplicationServices();
         }
 

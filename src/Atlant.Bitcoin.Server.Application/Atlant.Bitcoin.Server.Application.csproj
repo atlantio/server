@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Domain\Atlant.Bitcoin.Server.Domain.csproj" />
+    <ProjectReference Include="..\Atlant.Bitcoin.Server.ExternalIntegration\Atlant.Bitcoin.Server.ExternalIntegration.csproj" />
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Repositories\Atlant.Bitcoin.Server.Repositories.csproj" />
   </ItemGroup>
 
