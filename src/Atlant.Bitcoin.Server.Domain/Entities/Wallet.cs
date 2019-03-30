@@ -6,12 +6,8 @@ namespace Atlant.Bitcoin.Server.Domain.Entities
     public class Wallet : EntityBase<Guid>
     {
         public string Name { get; }
-        public double Balance { get; }
 
-        public Wallet(
-            Guid id,
-            string name,
-            double balance) : base(id)
+        public Wallet(Guid id, string name) : base(id)
         {
             if (id == Guid.Empty)
                 throw new ArgumentException(nameof(id));
@@ -19,11 +15,7 @@ namespace Atlant.Bitcoin.Server.Domain.Entities
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentException(nameof(name));
 
-            if (balance < 0)
-                throw new ArgumentException(nameof(balance));
-
             Name = name;
-            Balance = balance;
         }
     }
 }
