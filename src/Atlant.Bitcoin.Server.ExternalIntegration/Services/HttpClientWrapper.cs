@@ -4,7 +4,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions;
+using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions.Internal;
 using Atlant.Bitcoin.Server.ExternalIntegration.Models;
+using Atlant.Bitcoin.Server.ExternalIntegration.Models.Internal;
+using Atlant.Bitcoin.Server.ExternalIntegration.Models.Internal.RequestModels;
 using Atlant.Bitcoin.Server.Settings.Abstractions;
 using Newtonsoft.Json;
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Atlant.Bitcoin.Server.ExternalIntegration.Models
+namespace Atlant.Bitcoin.Server.ExternalIntegration.Models.Internal.RequestModels
 {
     internal class BitcoinServerRequestModel
     {

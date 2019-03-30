@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions;
+using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions.Internal;
 using Atlant.Bitcoin.Server.ExternalIntegration.Services;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Atlant.Bitcoin.Server.Application.Abstractions;
+using Atlant.Bitcoin.Server.Core;
 using Atlant.Bitcoin.Server.Domain.Entities;
 using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions;
 
@@ -20,11 +21,13 @@ namespace Atlant.Bitcoin.Server.Application.Services
                 paymentExternalService ?? throw new ArgumentNullException(nameof(paymentExternalService));
         }
 
-        public async Task TransferToAddress(string to, double amount)
+        public async Task<OperationResult> TransferToAddress(string to, double amount)
         {
             var hotWallet = await _walletsService.GetHotWalletAsync();
 
-            await _paymentExternalService.SendToAddress(hotWallet.Name, to, amount);
+            var operatioResult = await _paymentExternalService.SendToAddress(hotWallet.Name, to, amount);
+
+            return operatioResult;
         }
     }
 }

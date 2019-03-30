@@ -1,7 +1,6 @@
 ﻿using Atlant.Bitcoin.Server.Application.Abstractions;
 using Atlant.Bitcoin.Server.Contracts.RequestModels;
 using Atlant.Bitcoin.Server.Controllers.Controllers.Abstractions.v1;
-using Atlant.Bitcoin.Server.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -24,9 +23,12 @@ namespace Atlant.Bitcoin.Server.Controllers.Controllers
             if (request == null)
                 return BadRequest();
 
-            await _paymentService.TransferToAddress(request.RecipientAddress, request.Amount);
+            var result = await _paymentService.TransferToAddress(request.RecipientAddress, request.Amount);
 
-            return Ok();
+            if (result.IsSucceeded)
+                return Ok(result.Message);
+
+            return BadRequest(result.Message);
         }
     }
 }

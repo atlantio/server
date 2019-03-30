@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Atlant.Bitcoin.Server.Core\Atlant.Bitcoin.Server.Core.csproj" />
     <ProjectReference Include="..\Atlant.Bitcoin.Server.Settings\Atlant.Bitcoin.Server.Settings.csproj" />
   </ItemGroup>
 

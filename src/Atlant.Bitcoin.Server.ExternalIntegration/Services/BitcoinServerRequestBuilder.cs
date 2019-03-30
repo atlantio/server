@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions;
+using Atlant.Bitcoin.Server.ExternalIntegration.Abstractions.Internal;
 using Atlant.Bitcoin.Server.ExternalIntegration.Models;
+using Atlant.Bitcoin.Server.ExternalIntegration.Models.Internal;
+using Atlant.Bitcoin.Server.ExternalIntegration.Models.Internal.RequestModels;
 
 namespace Atlant.Bitcoin.Server.ExternalIntegration.Services
 {

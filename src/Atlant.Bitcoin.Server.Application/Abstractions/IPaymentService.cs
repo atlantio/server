@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Atlant.Bitcoin.Server.Core;
 
 namespace Atlant.Bitcoin.Server.Application.Abstractions
 {
     public interface IPaymentService
     {
-        Task TransferToAddress(string to, double amount);
+        Task<OperationResult> TransferToAddress(string to, double amount);
     }
 }
