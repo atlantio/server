@@ -1,4 +1,5 @@
-﻿using Atlant.Bitcoin.Server.Application;
+﻿using System;
+using Atlant.Bitcoin.Server.Application;
 using Atlant.Bitcoin.Server.DataAccess.Sql;
 using Atlant.Bitcoin.Server.ExternalIntegration;
 using Atlant.Bitcoin.Server.Settings.Abstractions;
@@ -16,6 +17,12 @@ namespace Atlant.Bitcoin.Server.Host
                 .AddMvcCore()
                 .AddJsonFormatters();
 
+            services.AddHsts(options =>
+            {
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(10);
+            });
+
             services.AddConfiguration();
             var connectionStrings = services.BuildServiceProvider().GetRequiredService<IConnectionStrings>();
 
@@ -28,7 +35,10 @@ namespace Atlant.Bitcoin.Server.Host
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMvc();
+            app
+                .UseHsts()
+                .UseHttpsRedirection()
+                .UseMvc();
         }
     }
 }
