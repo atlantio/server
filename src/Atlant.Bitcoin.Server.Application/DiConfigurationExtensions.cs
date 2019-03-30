@@ -9,7 +9,7 @@ namespace Atlant.Bitcoin.Server.Application
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IWalletsService, WalletsService>();
-            services.AddTransient<IPaymentService, PaymentService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
             return services;
         }

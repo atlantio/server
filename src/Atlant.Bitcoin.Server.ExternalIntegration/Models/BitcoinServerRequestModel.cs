@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Atlant.Bitcoin.Server.ExternalIntegration.Models.Abstractions
+namespace Atlant.Bitcoin.Server.ExternalIntegration.Models
 {
-    internal class BitcoinServerModelBase
+    internal class BitcoinServerRequestModel
     {
         [JsonProperty("jsonrpc")]
         public string JsonRpc { get; } = "1.0";

@@ -9,8 +9,9 @@ namespace Atlant.Bitcoin.Server.ExternalIntegration
     {
         public static IServiceCollection AddExtenralIntegrationServices(this IServiceCollection services)
         {
-            services.AddTransient<HttpClient>();
-            services.AddTransient<IPaymentExternalService, PaymentExternalService>();
+            services.AddSingleton<HttpClient>();
+            services.AddSingleton<IHttpClientWrapper, HttpClientWrapper>();
+            services.AddScoped<IPaymentExternalService, PaymentExternalService>();
 
             return services;
         }
