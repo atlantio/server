@@ -20,11 +20,26 @@ namespace Atlant.Bitcoin.Server.DataAccess.Sql.Repositories
 
         public async Task<IReadOnlyCollection<Wallet>> GetHotWalletsAsync()
         {
-            var walletEntities = await _context.Wallets.ToListAsync();
+            var walletEntities = await _context
+                .Wallets
+                .AsNoTracking()
+                .ToListAsync();
 
             var wallets = walletEntities.Select(e => e.MapToWallet());
 
             return wallets.ToList();
+        }
+
+        public Task UpdateWalletAsync(Wallet wallet)
+        {
+            if (wallet == null)
+                throw new ArgumentNullException(nameof(wallet));
+
+            var walletEntity = wallet.MapToEntity();
+
+            _context.Update(walletEntity);
+
+            return _context.SaveChangesAsync();
         }
     }
 }

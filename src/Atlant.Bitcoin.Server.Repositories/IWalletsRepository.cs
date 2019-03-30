@@ -7,5 +7,6 @@ namespace Atlant.Bitcoin.Server.Repositories
     public interface IWalletsRepository
     {
         Task<IReadOnlyCollection<Wallet>> GetHotWalletsAsync();
+        Task UpdateWalletAsync(Wallet wallet);
     }
 }

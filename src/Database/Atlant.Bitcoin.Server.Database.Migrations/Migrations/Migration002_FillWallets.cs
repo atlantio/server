@@ -14,17 +14,20 @@ namespace Atlant.Bitcoin.Server.Database.Migrations.Migrations
                 .Row(new Dictionary<string, object>()
                 {
                     { "Id", Guid.NewGuid() },
-                    { "Name", "test1" }
+                    { "Name", "test1" },
+                    { "Balance", 0 }
                 })
                 .Row(new Dictionary<string, object>()
                 {
                     { "Id", Guid.NewGuid() },
-                    { "Name", "test2" }
+                    { "Name", "test2" },
+                    { "Balance", 0 }
                 })
                 .Row(new Dictionary<string, object>()
                 {
                     { "Id", Guid.NewGuid() },
-                    { "Name", "test3" }
+                    { "Name", "test3" },
+                    { "Balance", 0 }
                 });
         }
     }
